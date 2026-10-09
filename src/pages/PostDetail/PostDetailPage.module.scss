@@ -1,0 +1,142 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+
+
+.page {
+  padding-block: $space-4 $space-7;
+  @include container;
+
+  @include mq('desktop') {
+    display: grid;
+    grid-template-columns: repeat($grid-desktop-columns, 1fr);
+    column-gap: $grid-desktop-gutter;
+    align-items: start;
+    padding-block: $space-6 $space-8;
+  }
+}
+
+.back {
+  margin-bottom: $space-4;
+  
+  button {
+    @include button-secondary;
+  }
+
+  @include mq('desktop') {
+    grid-column: 1 / span 2;
+    justify-self: start;
+    margin-bottom: 0;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  @include mq('desktop') {
+    grid-column: 3 / span 8;
+    gap: $space-5;
+  }
+}
+
+
+.title {
+  @include text('h3');
+  font-size: 1.5rem;
+  color: $color-heading;
+  overflow-wrap: anywhere;
+
+  @include mq('desktop') {
+    @include text('h2');
+  }
+}
+
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  @include text('caption');
+  color: $color-text-muted;
+}
+
+.authorName {
+  color: $color-heading;
+  font-weight: $fw-bold;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: $radius-md;
+  object-fit: cover;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  @include text('body-small');
+  color: $color-text;
+
+  @include mq('desktop') {
+    @include text('body-large');
+  }
+}
+
+
+.latest {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  margin-top: $space-6;
+  padding-top: $space-5;
+  border-top: 1px solid $neutral-extra-light;
+
+  @include mq('desktop') {
+    grid-column: 3 / span 8;
+    margin-top: $space-7;
+  }
+}
+
+.latestTitle {
+  @include text('h3', $fw-semibold);
+  color: $color-heading;
+}
+
+.latestGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-mobile-gutter;
+  padding: 0;
+  list-style: none;
+
+  @include mq('tablet') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $grid-desktop-gutter;
+  }
+}
+
+
+.state {
+  grid-column: 1 / -1;
+  padding: $space-7 0;
+  text-align: center;
+  color: $color-text-muted;
+}

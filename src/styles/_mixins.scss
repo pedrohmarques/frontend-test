@@ -47,6 +47,26 @@
   }
 }
 
+@mixin button-secondary {
+  @include text('body-large');
+  stroke-width: 1px;
+  background-color: transparent;
+  color: $secondary-medium;
+  border: 1px solid $secondary-medium;
+  border-radius: $radius-pill;
+  cursor: pointer;
+  display: flex;
+  gap: $space-1;
+  justify-content: center;
+  align-items: center;
+  padding: $space-2 $space-4 $space-2 $space-4;
+
+  &:hover {
+    color: $secondary-dark;
+    border-color: $secondary-dark;
+  }
+}
+
 @mixin button-reset {
   appearance: none;
   border: none;
