@@ -1,0 +1,94 @@
+$neutral-lightest:   #efeff2;
+$neutral-extra-light:#dfe2e6;
+$neutral-light:      #bfc1c8;
+$neutral-medium:     #9ea0a5;
+$neutral-dark:       #7e8085;
+$neutral-extra-dark: #5d5e62;
+$neutral-darkest:    #1f2121;
+$white:              #ffffff;
+
+$primary-light:  #0a0e3a;
+$primary-medium: #050724;
+$primary-dark:   #010318;
+
+$secondary-light:  #ef4b83;
+$secondary-medium: #d31350;
+$secondary-dark:   #8c0f38;
+
+$accent-light:  #00bfc1;
+$accent-medium: #009597;
+$accent-dark:   #006b6e;
+
+
+$color-bg:            $neutral-lightest;
+$color-surface:       $neutral-lightest;
+$color-border:        $neutral-extra-light;
+$color-heading:       $primary-dark;
+$color-text:          $neutral-darkest;
+$color-text-muted:    $neutral-extra-dark;
+$color-brand:         $secondary-medium;
+$color-brand-hover:   $secondary-dark;
+$color-brand-tint:    rgba($secondary-medium, 0.05); 
+$color-accent-tint:   rgba($accent-light, 0.05);     
+$color-tag-bg:        $neutral-extra-light;
+
+
+$font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+$fw-regular:  400;
+$fw-semibold: 600;
+$fw-bold:     700;
+
+
+$type-scale: (
+  'h1':         (3.5rem,   1.3, $fw-bold),     
+  'h2':         (2.25rem,  1.3, $fw-bold),     
+  'h3':         (1.25rem,  1.3, $fw-bold),     
+  'body-large': (1rem,     1.5, $fw-regular),  
+  'body-small': (0.875rem, 1.5, $fw-regular),  
+  'caption':    (0.75rem,  1.3, $fw-regular),  
+);
+
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  24px;
+$space-6:  32px;
+$space-7:  40px;
+$space-8:  56px;
+
+$radius-sm:   4px;   
+$radius-md:   16px;  
+$radius-pill: 42px;  
+
+
+$shadow-card: 0 4px 16px rgba($primary-dark, 0.06);
+
+
+$breakpoints: (
+  'tablet':  768px,
+  'desktop': 1024px,
+  'wide':    1440px,
+);
+
+$grid-mobile-columns: 4;
+$grid-mobile-margin:  16px;
+$grid-mobile-gutter:  16px;
+
+$grid-desktop-columns: 12;
+$grid-desktop-margin:  56px;
+$grid-desktop-gutter:  24px;
+
+$container-max: 1440px;
+
+$header-height:        72px;
+$icon-size:            24px;
+$search-button-size:   40px;
+$card-width:           314px;
+$card-image-height:    196px;
+$control-height:       32px;  
+$filter-panel-width:   314px;
+
+
+$transition: 150ms ease-in-out;

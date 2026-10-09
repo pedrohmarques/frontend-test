@@ -1,5 +1,5 @@
 import './App.css'
-import PostListPage from './pages/PostListPage'
+import PostListPage from './pages/PostList/PostListPage'
 
 function App() {
   return (

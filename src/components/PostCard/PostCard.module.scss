@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba($primary-dark, 0.1);
+    cursor: pointer;
+  }
+  
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba($primary-dark, 0.1);
+    }
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @include focus-ring;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 314 / 196;
+    object-fit: cover;
+}
+
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-4;
+}
+
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  @include text('caption');
+  color: $color-text-muted;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: $color-brand;
+}
+
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.title {
+  @include text('h3');
+  color: $color-heading;
+  overflow-wrap: anywhere;
+  @include line-clamp(2);
+}
+
+.excerpt {
+  @include text('body-small');
+  color: $color-text;
+  @include line-clamp(2);
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  margin-top: auto;
+  padding: 0;
+  list-style: none;
+}

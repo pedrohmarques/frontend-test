@@ -1,0 +1,14 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: $control-height;
+  padding: $space-2 $space-3;
+  border-radius: $radius-pill;
+  background-color: $color-tag-bg;
+  color: $color-text-muted;
+  @include text('caption', $fw-semibold);
+  white-space: nowrap;
+}

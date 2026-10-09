@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../services/posts.service";
-import type { Post } from "../types/Posts";
-import PostCard from "../components/PostCard";
+import { getPosts } from "../../services/posts.service";
+import type { Post } from "../../types/Posts";
+import PostCard from "../../components/PostCard/PostCard";
+import styles from "./PostListPage.module.scss";
 
 function PostListPage() {
 
@@ -14,7 +15,7 @@ function PostListPage() {
     }, []);
 
     return (
-        <div>
+        <div className={styles.grid}>
             {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
             ))}
