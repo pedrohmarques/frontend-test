@@ -38,7 +38,7 @@ export function ErrorState({ error, onRetry, headingLevel = 2 }: ErrorStateProps
           onRetry && (
             <button
               type="button"
-              className="button-secondary"
+              className="button secondary"
               onClick={onRetry}
             >
               <RefreshCw size={18} aria-hidden="true" />

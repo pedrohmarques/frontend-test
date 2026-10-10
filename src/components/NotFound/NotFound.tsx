@@ -19,7 +19,7 @@ export default function NotFound({
         description={description}
         headingLevel={1}
         actions={
-          <Link to="/" className="button-secondary">
+          <Link to="/" className="button secondary">
             <ArrowLeft size={18} aria-hidden="true" />
             Back to the blog
           </Link>

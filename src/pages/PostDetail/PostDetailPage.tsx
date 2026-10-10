@@ -30,7 +30,7 @@ function PageDetailPage() {
     return (
         <div className={styles.page}>
             <div className={styles.back}>
-                <button type="button" className="button-secondary" onClick={() => navigate(-1)}> <ArrowLeft  size={16}/> Back</button>
+                <button type="button" className="button secondary" onClick={() => navigate(-1)}> <ArrowLeft  size={16}/> Back</button>
             </div>
             <div className={styles.article}>
                 <h1 className={styles.title}>{post.title}</h1>
