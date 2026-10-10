@@ -19,7 +19,7 @@
   }
   font-size: list.nth($style, 1);
   line-height: list.nth($style, 2);
-  font-weight: if($weight, $weight, list.nth($style, 3));
+  font-weight: if(sass($weight): $weight, list.nth($style, 3));
 }
 
 @mixin container {
