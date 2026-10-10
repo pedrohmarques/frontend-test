@@ -1,0 +1,51 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.label {
+  display: none;
+  color: $neutral-extra-dark;
+  @include text('body-small', $fw-bold);
+
+  @include mq('desktop') {
+    display: inline;
+  }
+}
+
+.button {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-1 $space-2;
+  border-radius: $radius-pill;
+  color: $neutral-extra-dark;
+  @include text('body-small');
+  white-space: nowrap;
+  transition: background-color $transition, color $transition;
+  @include focus-ring;
+
+  svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: $accent-medium;
+    transition: color $transition;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $accent-medium;
+      color: $neutral-extra-light;
+
+      svg {
+        color: $neutral-extra-light;
+      }
+    }
+  }
+}

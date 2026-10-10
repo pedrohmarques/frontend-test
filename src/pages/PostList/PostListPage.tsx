@@ -8,6 +8,7 @@ import { usePosts } from '../../hooks/usePosts';
 import styles from './PostListPage.module.scss';
 import { Loading } from '../../components/Loading/Loading';
 import StatusMessage from '../../components/StatusMessage/StatusMessage';
+import Sort from '../../components/Filters/Sort/Sort';
 
 function PostListPage() {
   const { posts, loading, error, refetch } = usePosts();
@@ -24,7 +25,7 @@ function PostListPage() {
       <div className={styles.top}>
         <h1 className={styles.title}>DWS blog</h1>
         <div className={styles.sortDesktop}>
-          {/* Sort here */}
+          <Sort />
         </div>
       </div>
 
