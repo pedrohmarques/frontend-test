@@ -1,0 +1,119 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+// Round navy button
+.iconButton {
+  @include button-reset;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: $search-button-size;
+  height: $search-button-size;
+  border-radius: 50%;
+  background-color: $primary-light;
+  color: $neutral-lightest;
+  transition: background-color $transition;
+  @include focus-ring;
+
+  &:hover {
+    background-color: $primary-medium;
+  }
+}
+
+// Mobile-only button that opens the field
+.toggle {
+  @include mq('desktop') {
+    display: none;
+  }
+}
+
+.search {
+  display: none;
+  align-items: center;
+  gap: $space-2;
+  width: 100%;
+  padding: $space-1 $space-1 $space-1 $space-2;
+  border: 1px solid $neutral-extra-light;
+  border-radius: $radius-pill;
+  background-color: $neutral-lightest;
+  transition: border-color $transition;
+
+  &:hover,
+  &:focus-within {
+    border-color: $accent-medium;
+  }
+
+  &.open {
+    display: flex;
+  }
+
+  @include mq('desktop') {
+    display: flex;
+    max-width: 480px;
+    padding-left: $space-4;
+  }
+}
+
+.back {
+  @include button-reset;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: $neutral-extra-dark;
+  @include focus-ring;
+
+  @include mq('desktop') {
+    display: none;
+  }
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: $neutral-extra-dark;
+  @include text('body-small');
+  outline: none;
+
+  &::placeholder {
+    color: $neutral-extra-dark;
+  }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.clear {
+  @include button-reset;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: $neutral-dark;
+  transition: background-color $transition, color $transition;
+  @include focus-ring;
+
+  &:hover {
+    background-color: $neutral-extra-light;
+    color: $neutral-darkest;
+  }
+}
+
+.srOnly {
+  @include visually-hidden;
+}
