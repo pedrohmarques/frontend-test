@@ -39,7 +39,7 @@ function PageDetailPage() {
                     <img src={post.author.profilePicture} alt="Author" className={styles.avatar} />
                     <div className={styles.authorInfo}>
                         <span>Written by: <span className={styles.authorName}>{post.author.name}</span></span>
-                        <time>{formatDate(post.author.createdAt)}</time>
+                        <time dateTime={post.createdAt}>{formatDate(post.createdAt)}</time>
                     </div>                    
                 </div>
 

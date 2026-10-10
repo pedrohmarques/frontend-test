@@ -24,7 +24,9 @@ export function usePost(id: string | undefined, initialPost?: Post) {
     setLoading(true);
     setError(null);
 
-    getPostsById(id).then((data) => setPost(data)).catch((err) => {
+    getPostsById(id, controller.signal).then((data) => {
+      if (!controller.signal.aborted) setPost(data);
+    }).catch((err) => {
         if (controller.signal.aborted) return;
         setError(err instanceof ApiError ? err : new ApiError(0, 'Unexpected error'));
     }).finally(() => {

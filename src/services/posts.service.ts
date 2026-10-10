@@ -6,7 +6,7 @@ export async function getPosts() {
     return posts;
 }
 
-export async function getPostsById(id: string) {
-    const posts = await api<Post>(`/posts/${id}`, { method: 'GET' });
+export async function getPostsById(id: string, signal?: AbortSignal) {
+    const posts = await api<Post>(`/posts/${id}`, { method: 'GET', signal });
     return posts;
 }
