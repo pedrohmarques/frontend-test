@@ -18,10 +18,6 @@
 
 .back {
   margin-bottom: $space-4;
-  
-  button {
-    @include button-secondary;
-  }
 
   @include mq('desktop') {
     grid-column: 1 / span 2;

@@ -6,6 +6,9 @@ import styles from "./PostDetailPage.module.scss";
 import PostCard from "../../components/PostCard/PostCard";
 import { usePosts } from "../../hooks/usePosts";
 import { ArrowLeft } from "lucide-react";
+import NotFound from "../../components/NotFound/NotFound";
+import { ErrorState } from "../../components/ErrorState/ErrorState";
+import { Loading } from "../../components/Loading/Loading";
 
 function PageDetailPage() {
     const { id } = useParams<{ id: string }>();
@@ -16,10 +19,9 @@ function PageDetailPage() {
     const { posts } = usePosts();
 
 
-    // TODO: Create Not Found Page and Loading
-    if (loading) return <p>Loading...</p>;
-    if (error?.status === 404) return <p>Post not found.</p>;
-    if (error) return <p>Something went wrong.</p>;
+    if (loading) return <p><Loading fullPage size="xl"></Loading></p>;
+    if (error?.status === 404) return <p><NotFound /></p>;
+    if (error) return <p><ErrorState error={error} headingLevel={1} /></p>;
     if (!post) return null;
 
 

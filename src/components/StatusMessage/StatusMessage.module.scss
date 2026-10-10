@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-3;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  padding: $space-7 $space-4;
+  text-align: center;
+
+  @include mq('desktop') {
+    padding-block: $space-8;
+  }
+}
+
+.iconWrapper {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: $space-2;
+  border-radius: 50%;
+}
+
+.neutral .iconWrapper {
+  background-color: $color-accent-tint;
+  color: $accent-dark;
+  box-shadow: inset 0 0 0 1px rgba($accent-medium, 0.2);
+}
+
+.error .iconWrapper {
+  background-color: $color-brand-tint;
+  color: $secondary-medium;
+  box-shadow: inset 0 0 0 1px rgba($secondary-medium, 0.2);
+}
+
+.title {
+  @include text('h3');
+  color: $color-heading;
+
+  @include mq('desktop') {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  @include text('body-small');
+  color: $color-text-muted;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-3;
+  margin-top: $space-3;
+}

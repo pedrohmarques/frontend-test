@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  color: $secondary-medium;
+}
+
+// Fills the screen below the sticky header and centers its content
+.fullPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - #{$header-height});
+  min-height: calc(100dvh - #{$header-height}); // mobile browsers' real height
+  gap: $space-4;
+}
+
+.icon {
+  flex-shrink: 0;
+  animation: spin 0.8s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 2.4s;
+  }
+}
+
+.label {
+  @include text('body-small', $fw-semibold);
+  color: $color-text-muted;
+}
+
+// Label grows with the spinner
+.lg .label {
+  @include text('body-large', $fw-semibold);
+}
+
+.xl .label {
+  @include text('h3', $fw-semibold);
+  color: $color-heading;
+}
+
+.srOnly {
+  @include visually-hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
