@@ -1,15 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791644102914" clover="3.2.0">
-  <project timestamp="1791644102914" name="All files">
-    <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1" elements="14" coveredelements="12" complexity="0" loc="3" ncloc="3" packages="1" files="2" classes="2"/>
-    <file name="Loading.module.scss" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\Loading\Loading.module.scss">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-    </file>
-    <file name="Loading.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\Loading\Loading.tsx">
+<coverage generated="1791645412500" clover="3.2.0">
+  <project timestamp="1791645412500" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="37" coveredconditionals="35" methods="12" coveredmethods="12" elements="77" coveredelements="75" complexity="0" loc="28" ncloc="28" packages="8" files="12" classes="12"/>
+    <package name="components.CategoryTag">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="CategoryTag.module.scss" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\CategoryTag\CategoryTag.module.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="CategoryTag.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\CategoryTag\CategoryTag.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ErrorState">
+      <metrics statements="5" coveredstatements="5" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <file name="ErrorState.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\ErrorState\ErrorState.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+        <line num="12" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="20" count="6" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Loading">
       <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="26" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="30" count="2" type="stmt"/>
-    </file>
+      <file name="Loading.module.scss" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\Loading\Loading.module.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="Loading.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\Loading\Loading.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="26" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.NotFound">
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="NotFound.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\NotFound\NotFound.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="14" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.PostCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="PostCard.module.scss" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\PostCard\PostCard.module.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="PostCard.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\PostCard\PostCard.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="27" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.StatusMessage">
+      <metrics statements="2" coveredstatements="2" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+      <file name="StatusMessage.module.scss" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\StatusMessage\StatusMessage.module.scss">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="StatusMessage.tsx" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\components\StatusMessage\StatusMessage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="24" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="lib">
+      <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <file name="api.ts" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\lib\api.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="cond" truecount="3" falsecount="0"/>
+        <line num="32" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="formatDate.ts" path="C:\Users\pedri\OneDrive\Desktop\Projetos\frontend-test\src\utils\formatDate.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

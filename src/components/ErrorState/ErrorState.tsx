@@ -26,7 +26,6 @@ function getErrorContent(error: unknown) {
 
 export function ErrorState({ error, onRetry, headingLevel = 2 }: ErrorStateProps) {
   const { icon, title, description } = getErrorContent(error);
-
   return (
     <div role="alert">
       <StatusMessage
