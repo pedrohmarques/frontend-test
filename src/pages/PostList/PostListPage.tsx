@@ -8,9 +8,9 @@ import { Loading } from "../../components/Loading/Loading";
 function PostListPage() {
     const {posts, loading, error} = usePosts()
 
-    if (loading) return <p><Loading fullPage size="xl"></Loading></p>;
-    if (error?.status === 404) return <p><NotFound /></p>;
-    if (error) return <p><ErrorState error={error} headingLevel={1} /></p>;
+    if (loading) return <Loading fullPage size="xl"></Loading>;
+    if (error?.status === 404) return <NotFound />;
+    if (error) return <ErrorState error={error} headingLevel={1} />;
     if (!posts) return null;
 
     return (
