@@ -1,0 +1,28 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.title {
+  @include text('body-large', $fw-semibold);
+  color: $color-heading;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.message {
+  @include text('body-small');
+  color: $color-text-muted;
+}
+
+.srOnly {
+  @include visually-hidden;
+}

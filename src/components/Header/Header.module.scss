@@ -1,0 +1,49 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid $neutral-extra-light;
+  background-color: rgba($neutral-lightest, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  height: $header-height;
+  @include container;
+}
+
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: baseline;
+  gap: $space-2;
+  color: $neutral-darkest;
+  @include focus-ring;
+}
+
+.searchOpen .logo {
+  display: none;
+
+  @include mq('desktop') {
+    display: flex;
+  }
+}
+
+.logoMark {
+  font-size: 1.75rem;
+  font-weight: $fw-bold;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.logoText {
+  @include text('body-small');
+  line-height: 1;
+}

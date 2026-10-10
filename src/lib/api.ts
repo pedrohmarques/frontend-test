@@ -9,13 +9,13 @@ export class ApiError extends Error {
     }
 }
 
-export async function api<T>(path: string, options: RequestInit): Promise<T> {
+export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
     let res: Response;
     try {
         res = await fetch(`${API_URL}${path}`, {
             ...options,
             headers: {
-                'Content-Type': 'application/json',
+                Accept: 'application/json',
                 ...options.headers,
             },
         });
@@ -26,7 +26,7 @@ export async function api<T>(path: string, options: RequestInit): Promise<T> {
 
     if (!res.ok) {
         const body = await res.json().catch(() => ({}));
-        throw new ApiError(res.status, body.message ?? `Error on ${path} (${res.status})`);
+        throw new ApiError(res.status, body.error ?? body.message ?? `Error on ${path} (${res.status})`);
     } 
 
     return res.json() as Promise<T>;

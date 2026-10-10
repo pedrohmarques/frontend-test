@@ -6,6 +6,9 @@ import styles from "./PostDetailPage.module.scss";
 import PostCard from "../../components/PostCard/PostCard";
 import { usePosts } from "../../hooks/usePosts";
 import { ArrowLeft } from "lucide-react";
+import NotFound from "../../components/NotFound/NotFound";
+import { ErrorState } from "../../components/ErrorState/ErrorState";
+import { Loading } from "../../components/Loading/Loading";
 
 function PageDetailPage() {
     const { id } = useParams<{ id: string }>();
@@ -16,10 +19,9 @@ function PageDetailPage() {
     const { posts } = usePosts();
 
 
-    // TODO: Create Not Found Page and Loading
-    if (loading) return <p>Loading...</p>;
-    if (error?.status === 404) return <p>Post not found.</p>;
-    if (error) return <p>Something went wrong.</p>;
+    if (loading) return <Loading fullPage size="xl"></Loading>;
+    if (error?.status === 404) return <NotFound />;
+    if (error) return <ErrorState error={error} headingLevel={1} />;
     if (!post) return null;
 
 
@@ -28,7 +30,7 @@ function PageDetailPage() {
     return (
         <div className={styles.page}>
             <div className={styles.back}>
-                <button type="button" className="button-secondary" onClick={() => navigate(-1)}> <ArrowLeft  size={16}/> Back</button>
+                <button type="button" className="button secondary" onClick={() => navigate(-1)}> <ArrowLeft  size={16}/> Back</button>
             </div>
             <div className={styles.article}>
                 <h1 className={styles.title}>{post.title}</h1>

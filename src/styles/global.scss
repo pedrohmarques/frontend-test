@@ -70,3 +70,58 @@ h3 { @include text('h3'); color: $color-heading; }
 .visually-hidden {
   @include visually-hidden;
 }
+
+.button {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  min-height: 40px;
+  padding: $space-2 $space-4;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  @include text('body-large', $fw-semibold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color $transition, border-color $transition, color $transition;
+  @include focus-ring;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.primary {
+  padding-block: $space-3;
+  background-color: $secondary-medium;
+  color: $neutral-lightest;
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      background-color: $secondary-dark;
+    }
+  }
+}
+.secondary {
+  border-color: $secondary-medium;
+  background-color: transparent;
+  color: $secondary-medium;
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      border-color: $secondary-dark;
+      color: $secondary-dark;
+    }
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

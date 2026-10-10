@@ -1,0 +1,41 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.item {
+  @include button-reset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+  width: 100%;
+  min-height: 40px;
+  padding: $space-2;
+  border: 1px solid transparent;
+  border-bottom-color: $neutral-extra-light;
+  border-radius: $radius-sm;
+  color: $neutral-darkest;
+  text-align: left;
+  @include text('body-small');
+  transition: color $transition, background-color $transition, border-color $transition;
+  @include focus-ring;
+
+  &:hover {
+    color: $accent-dark;
+  }
+
+  &[aria-pressed='true'] {
+    border-color: $accent-dark;
+    background-color: $color-accent-tint;
+    color: $accent-dark;
+  }
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.check {
+  flex-shrink: 0;
+}

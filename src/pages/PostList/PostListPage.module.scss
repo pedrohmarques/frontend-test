@@ -1,18 +1,86 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+.page {
+  padding-block: $space-4 $space-7;
+  @include container;
+
+  @include mq('desktop') {
+    padding-block: $space-6 $space-8;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+
+  @include mq('desktop') {
+    margin-bottom: $space-6;
+  }
+}
+
+.title {
+  @include visually-hidden; 
+
+  @include mq('desktop') {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    @include text('h2');
+  }
+}
+
+.sortDesktop {
+  display: none;
+
+  @include mq('desktop') {
+    display: block;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat($grid-mobile-columns, 1fr);
+  gap: $grid-mobile-gutter;
+
+  @include mq('desktop') {
+    grid-template-columns: repeat($grid-desktop-columns, 1fr);
+    gap: $grid-desktop-gutter;
+    align-items: start;
+  }
+}
 .grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: $grid-mobile-gutter;
-  
-    @include mq('tablet') {
-      grid-template-columns: repeat(2, 1fr); 
-    }
-  
-    @include mq('desktop') {
-      grid-column: span 9; 
-      grid-template-columns: repeat(3, 1fr); 
-      gap: $grid-desktop-gutter;
+  grid-column: 1 / -1;
+  min-width: 0;
+
+  @include mq('desktop') {
+    .layout:has(> aside) & {
+      grid-column: span 9;
     }
   }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-mobile-gutter;
+
+  @include mq('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $grid-desktop-gutter;
+  }
+}
+
+.srOnly {
+  @include visually-hidden;
+}
