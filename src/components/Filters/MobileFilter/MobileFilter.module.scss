@@ -1,0 +1,19 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+  margin-bottom: $space-4;
+
+  @include mq('desktop') {
+    display: none;
+  }
+}
+
+.sort {
+  margin-left: auto;
+}

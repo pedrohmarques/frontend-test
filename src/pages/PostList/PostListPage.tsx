@@ -9,6 +9,7 @@ import styles from './PostListPage.module.scss';
 import { Loading } from '../../components/Loading/Loading';
 import StatusMessage from '../../components/StatusMessage/StatusMessage';
 import Sort from '../../components/Filters/Sort/Sort';
+import MobileFilters from '../../components/Filters/MobileFilter/MobileFilter';
 
 function PostListPage() {
   const { posts, loading, error, refetch } = usePosts();
@@ -29,7 +30,7 @@ function PostListPage() {
         </div>
       </div>
 
-      {/* Mobile here */}
+      <MobileFilters />
 
       <div className={styles.layout}>
         <FilterPanel />

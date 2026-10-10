@@ -1,0 +1,87 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.dropdown {
+  min-width: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  height: $control-height;
+  border: 1px solid $secondary-medium;
+  border-radius: $radius-pill;
+  background-color: $neutral-lightest;
+  color: $secondary-medium;
+  transition: background-color $transition;
+
+  &:hover,
+  &.active {
+    background-color: $color-brand-tint;
+  }
+}
+
+.trigger {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 $space-2 0 $space-4;
+  border-radius: $radius-pill;
+  @include text('caption', $fw-bold);
+  @include focus-ring;
+
+  &:only-child {
+    padding-right: $space-3;
+  }
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform $transition;
+
+  [aria-expanded='true'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.clear {
+  @include button-reset;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: $space-2;
+  border-radius: 50%;
+  transition: background-color $transition;
+  @include focus-ring;
+
+  &:hover {
+    background-color: rgba($secondary-medium, 0.12);
+  }
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + #{$space-2});
+  left: 0;
+  z-index: 10;
+  width: $filter-panel-width;
+  max-width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: $space-4;
+  border-radius: $radius-md;
+  background-color: $white;
+  box-shadow: 0 8px 24px rgba($primary-dark, 0.12);
+}
